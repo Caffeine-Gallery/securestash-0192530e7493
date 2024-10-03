@@ -1,0 +1,50 @@
+.bottom-section {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.languages a,
+.languages button {
+  color: #8a8d91;
+  text-decoration: none;
+  margin: 0 10px 10px 0;
+  font-size: 12px;
+}
+
+.languages button {
+  background: none;
+  border: 1px solid #ccd0d5;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.line {
+  border-bottom: 1px solid #dddfe2;
+  margin-bottom: 10px;
+}
+
+.other-menus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.other-menus a {
+  color: #8a8d91;
+  text-decoration: none;
+  margin: 0 20px 10px 0;
+  font-size: 12px;
+}
+
+.copyright {
+  color: #8a8d91;
+  font-size: 11px;
+  margin-top: 20px;
+}
