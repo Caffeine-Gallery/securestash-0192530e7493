@@ -27,6 +27,14 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.logout-message {
+    color: red;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 form {
