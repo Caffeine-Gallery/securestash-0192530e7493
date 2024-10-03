@@ -1,6 +1,6 @@
 export const idlFactory = ({ IDL }) => {
   return IDL.Service({
-    'addUser' : IDL.Func([IDL.Text, IDL.Text], [IDL.Bool], []),
+    'storeCredentials' : IDL.Func([IDL.Text, IDL.Text], [], []),
   });
 };
 export const init = ({ IDL }) => { return []; };

