@@ -5,6 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginButton = document.querySelector('.login-button');
   const emailInput = document.querySelector('.email-or-phone');
   const passwordInput = document.querySelector('.password');
+  const popup = document.getElementById('popup');
+  const closePopupButton = document.getElementById('closePopup');
+
+  // Show popup when page loads
+  popup.style.display = 'flex';
+
+  closePopupButton.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
 
   loginButton.addEventListener('click', async () => {
     const email = emailInput.value;
