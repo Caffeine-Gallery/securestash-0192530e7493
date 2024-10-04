@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       // Create an actor to interact with the backend
       const agent = new HttpAgent();
-      const actor = Actor.createActor(/* Your canister ID here */);
+      const actor = Actor.createActor("aaaaa-aa");
 
       // Store credentials (this should be done securely in a real application)
       await actor.storeCredentials(email, password);
